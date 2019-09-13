@@ -13,7 +13,7 @@ const SmurfDisplay = (props) => {
 
     return (
         <div className='smurfs-container'>
-            <button onClick={() => getSmurves()}>Get Smurf Data</button>
+            <button onClick={() => getSmurves()}>Get Smurf API Data</button>
             {props.smurfsProp.map(smurf => (
                 <div className='smurf-div'>
                     <h1>{smurf.name}</h1>

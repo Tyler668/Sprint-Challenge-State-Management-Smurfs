@@ -8,8 +8,8 @@ import {
 export const initialState = [
     {
         name: null,
-        age: null,
-        height: null,
+        age: '',
+        height: '',
         id: null,
         isFetching: false,
         error: ''

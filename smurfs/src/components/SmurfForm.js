@@ -31,9 +31,9 @@ const ComicDisplay = (props) => {
 
         <div className='form-container'>
             
-                <input id="nameField" type='text' name='name'  ></input>
-                <input id="ageField" type='text' name='age'  ></input>
-                <input id="heightField" type='text' name='height' ></input>
+                <input id="nameField" type='text' name='name' placeholder = 'Name' ></input>
+                <input id="ageField" type='text' name='age' placeholder = 'Age' ></input>
+                <input id="heightField" type='text' name='height' placeholder = 'Height'></input>
                 <button onClick = {() => handleSubmit(`${document.querySelector('#nameField').value}`, `${document.querySelector('#ageField').value}`, `${document.querySelector('#heightField').value}`)}>Submit Smurf</button>
             
 
