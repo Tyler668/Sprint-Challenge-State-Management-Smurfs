@@ -1,24 +1,39 @@
-// import {
-//     FETCHING_COMIC_START,
-//     FETCHING_COMIC_SUCCESS,
-//     FETCHING_COMIC_FAILURE
-// } from '../actions';
+import {
+    FETCHING_SMURF_START,
+    FETCHING_SMURF_SUCCESS,
+    FETCHING_SMURF_FAILURE
+} from '../actions';
 
-export const initialState = {
-    name: '',
-    age: null,
-    height: null,
-    id: null,
-    isFetching: false,
-    error: ''
-};
+export const initialState = [
+    {
+        name: '',
+        age: null,
+        height: null,
+        id: null,
+        isFetching: false,
+        error: ''
+    }
+];
 
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-
-      default:
-        return state;
+        case FETCHING_SMURF_START:
+            return {
+                ...state,
+                isFetching: true,
+                error: ""
+            };
+        case FETCHING_SMURF_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                name: action.payload.name,
+                age: action.payload.age,
+                height: action.payload.height,
+                id: action.payload.id
+            };
+        default:
+            return state;
     }
-  };
-  
+};
