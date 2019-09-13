@@ -7,21 +7,13 @@ import {
 
 export const initialState = [
     {
-        name: '',
+        name: null,
         age: null,
         height: null,
         id: null,
         isFetching: false,
         error: ''
-    },
-    // {
-    //     name: "Brainey",
-    //     age: 200,
-    //     height: "5cm",
-    //     id: 0,
-    //     isFetching: false,
-    //     error: ''
-    //   }
+    }
 ];
 
 
@@ -35,8 +27,10 @@ export const reducer = (state = initialState, action) => {
             ];
         case FETCHING_SMURF_SUCCESS:
             console.log('Got Smurf',action.payload)
+            
             return [
                 ...state,
+                
                 {
                 isFetching: false,
                 name: action.payload.name,
@@ -46,10 +40,12 @@ export const reducer = (state = initialState, action) => {
                 }
             ];
             case ADD_SMURF:
-                return{
-                    ...state,
-                    error: action.payload
-                }
+                console.log('ADDING SMURF AAAAAAAAAAAAA', action.payload)
+                console.log('NEW STATE', state)
+                    return [
+                        ...state,
+                        action.payload
+                    ];
         default:
             return state;
     }

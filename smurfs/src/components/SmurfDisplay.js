@@ -17,8 +17,8 @@ const SmurfDisplay = (props) => {
             {props.smurfsProp.map(smurf => (
                 <div className='smurf-div'>
                     <h1>{smurf.name}</h1>
-                    <h2>{smurf.age}</h2>
-                    <h2>{smurf.height}</h2>
+                    <h2>{`Age: ${smurf.age}`}</h2>
+                    <h2>{`Height: ${smurf.height}`}</h2>
                 </div>
             ))
             }

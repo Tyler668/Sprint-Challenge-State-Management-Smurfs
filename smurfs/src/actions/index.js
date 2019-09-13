@@ -1,5 +1,13 @@
 import Axios from "axios";
 
+
+
+export const ADD_SMURF = 'ADD_SMURF'
+export const addSmurf = smurf => {
+    console.log('Add smurf action:', smurf)
+    return { type: ADD_SMURF, payload: smurf }
+}
+
 export const FETCHING_SMURF_START = "FETCHING_SMURF_START";
 export const FETCHING_SMURF_SUCCESS = "FETCHING_SMURF_SUCCESS";
 export const FETCHING_SMURF_FAILURE = "FETCHING_SMURF_FAILURE";
@@ -19,8 +27,3 @@ export const getSmurfAC = () => dispatch => {
 };
 
 
-export const ADD_SMURF = 'ADD_SMURF'
-export const addSmurf = smurf => {
-    // console.log('Actions Feature:', feature)
-    return { type: ADD_SMURF, payload: smurf }
-}
