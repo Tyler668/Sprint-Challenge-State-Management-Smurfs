@@ -4,14 +4,18 @@ import SmurfDisplay from './SmurfDisplay';
 
 const ComicDisplay = (props) =>{
 
+const handleSubmit = (e) =>{
+    e.preventDefault()
 
+} 
     return (
+        
         <div className = 'form-container'>
             <form onSubmit>
-            <input type = 'text' name = 'name' value = {nameValue}></input>
-            <input type = 'text' name = 'age' value = {nameValue}></input>
-            <input type = 'text' name = 'height' value = {nameValue}></input>
-            <button>Submit Smurf</button>
+            <input type = 'text' name = 'name'  ></input>
+            <input type = 'text' name = 'age'  ></input>
+            <input type = 'text' name = 'height' ></input>
+            <button onSubmit = {handleSubmit}>Submit Smurf</button>
             </form>
             
         </div>
@@ -20,7 +24,7 @@ const ComicDisplay = (props) =>{
 
 const mapStateToProps = state =>{
     return{
-      propsImg: state.comicSRC 
+      state
     }
   }
   
