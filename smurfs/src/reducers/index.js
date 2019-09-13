@@ -1,7 +1,8 @@
 import {
     FETCHING_SMURF_START,
     FETCHING_SMURF_SUCCESS,
-    FETCHING_SMURF_FAILURE
+    FETCHING_SMURF_FAILURE,
+    ADD_SMURF
 } from '../actions';
 
 export const initialState = [
@@ -12,27 +13,43 @@ export const initialState = [
         id: null,
         isFetching: false,
         error: ''
-    }
+    },
+    // {
+    //     name: "Brainey",
+    //     age: 200,
+    //     height: "5cm",
+    //     id: 0,
+    //     isFetching: false,
+    //     error: ''
+    //   }
 ];
 
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCHING_SMURF_START:
-            return {
+            return [
                 ...state,
-                isFetching: true,
-                error: ""
-            };
+            //    { isFetching: true,
+            //     error: ""}
+            ];
         case FETCHING_SMURF_SUCCESS:
-            return {
+            console.log('Got Smurf',action.payload)
+            return [
                 ...state,
+                {
                 isFetching: false,
                 name: action.payload.name,
                 age: action.payload.age,
                 height: action.payload.height,
                 id: action.payload.id
-            };
+                }
+            ];
+            case ADD_SMURF:
+                return{
+                    ...state,
+                    error: action.payload
+                }
         default:
             return state;
     }

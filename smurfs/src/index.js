@@ -15,12 +15,12 @@ const smurfState = createStore(
     composeEnhancers(applyMiddleware(thunk))
 );
 
-ReactDOM.render
-    (
+ReactDOM.render(
         <Provider store={smurfState}>
             <App />
         </Provider>
-        , document.getElementById('root'));
+        , document.getElementById('root')
+    );
 
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import SmurfDisplay from './SmurfDisplay';
 import SmurfForm from './SmurfForm';
-import Axios from 'axios';
+// import Axios from 'axios';
 
 // import './App.scss';
 
