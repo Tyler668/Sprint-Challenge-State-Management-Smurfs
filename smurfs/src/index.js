@@ -1,6 +1,27 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./components/App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './components/App';
+//  import * as serviceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from "redux"
+import thunk from "redux-thunk"
+import { reducer } from "./reducers"
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const comicState = createStore(
+    reducer,
+    composeEnhancers(applyMiddleware(thunk))
+);
+
+ReactDOM.render
+    (
+        <Provider store={comicState}>
+            <App />
+        </Provider>
+        , document.getElementById('root'));
+
+
+
+// serviceWorker.unregister();
